@@ -1,4 +1,9 @@
 Revision history for Food-ECodes
 
+0.02    Fri Apr 08 16:42:22 2011
+        - Fixed the typo in the pod for method is_valid().
+        - Fixed the typo in the pod for method is_eu_approved().
+        - Fixed the typo in the pod for method is_us_approved().
+
 0.01    Fri Apr 08 11:00:00 2011
         - First version released.

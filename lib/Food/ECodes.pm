@@ -12,11 +12,11 @@ Food::ECodes - Interface to Food Additive ECodes.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 Readonly my $COLOURS =>
 {
@@ -1740,7 +1740,7 @@ Return 1/0 depending whether the given Ecode is VALID or INVALID.
     ($food->is_valid('E100'))
     ?
     (print "VALID ECode [$code].\n")
-    :;
+    :
     (print "INVALID ECode [$code].\n");
 
 =cut
@@ -1838,7 +1838,7 @@ Return 1/0 depending whether the given Ecode is approved in EU.
     ($food->is_eu_approved('E100'))
     ?
     (print "EU approved ECode [$code].\n")
-    :;
+    :
     (print "EU unapproved ECode [$code].\n");
 
 =cut
@@ -1875,7 +1875,7 @@ Return 1/0 depending whether the given Ecode is approved in US.
     ($food->is_us_approved('E100'))
     ?
     (print "US approved ECode [$code].\n")
-    :;
+    :
     (print "US unapproved ECode [$code].\n");
 
 =cut
