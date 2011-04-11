@@ -1,5 +1,10 @@
 Revision history for Food-ECodes
 
+0.03    Mon Apr 11 12:33:18 2011
+        - Added remaining ECodes from 1000 upto 1600.
+        - Added method get_status().
+        - Updated unit test 01-unit-test.t for new method get_status().
+
 0.02    Fri Apr 08 16:42:22 2011
         - Fixed the typo in the pod for method is_valid().
         - Fixed the typo in the pod for method is_eu_approved().

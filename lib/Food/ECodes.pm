@@ -12,11 +12,11 @@ Food::ECodes - Interface to Food Additive ECodes.
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 Readonly my $COLOURS =>
 {
@@ -1660,6 +1660,215 @@ Readonly my $MISCELLANEOUS =>
                }  
 };
 
+Readonly my $ADDITIONAL_CHEMICALS =>
+{
+    'E1000' => { name     => 'Cholic acid',
+                 purpose  => 'Emulsifier'
+               },
+    'E1001' => { name     => 'Choline salts',
+                 purpose  => 'Emulsifier'
+               },
+    'E1100' => { name     => 'Amylase',
+                 purpose  => 'Stabiliser, flavour enhancer'
+               },
+    'E1101' => { name     => 'Proteases ((i)Protease, (ii)Papain, (iii)Bromelain, (iv)Ficin)',
+                 purpose  => 'Stabiliser, flavour enhancer'
+               },
+    'E1102' => { name     => 'Glucose oxidase',
+                 purpose  => 'Antioxidant'
+               },
+    'E1103' => { name     => 'Invertase',
+                 purpose  => 'Stabiliser',
+                 approved => ['EU']
+               },
+    'E1104' => { name     => 'Lipases' },
+    'E1105' => { name     => 'Lysozyme',
+                 purpose  => 'Preservative'
+               },
+    'E1200' => { name     => 'Polydextrose',
+                 purpose  => 'Stabiliser, thickening agent, humectant, carrier',
+                 approved => ['EU']
+               },
+    'E1201' => { name     => 'Polyvinylpyrrolidone',
+                 purpose  => 'Stabiliser',
+                 approved => ['EU']
+               },
+    'E1202' => { name     => 'Polyvinylpolypyrrolidone (carrier)',
+                 purpose  => 'Stabiliser',
+                 approved => ['EU']
+               },
+    'E1203' => { name     => 'Polyvinyl alcohol',
+                 approved => ['EU']
+               },
+    'E1204' => { name     => 'Pullulan',
+                 approved => ['EU']
+               },
+    'E1400' => { name     => 'Dextrin (Dextrins, roasted starch white and yellow) (stabiliser)',
+                 purpose  => 'Thickening agent'
+               },
+    'E1401' => { name     => 'Modified starch ((Acid-treated starch) stabiliser)',
+                 purpose  => 'Thickening agent'
+               },
+    'E1402' => { name     => 'Alkaline modified starch (stabiliser)',
+                 purpose  => 'Thickening agent'
+               },
+    'E1403' => { name     => 'Bleached starch (stabiliser)',
+                 purpose  => 'Thickening agent'
+               },
+    'E1404' => { name     => 'Oxidized starch (emulsifier)',
+                 purpose  => 'Thickening agent',
+                 approved => ['EU']
+               },
+    'E1405' => { name     => 'Enzyme treated starch' },
+    'E1410' => { name     => 'Monostarch phosphate (stabiliser)',
+                 purpose  => 'Thickening agent',
+                 approved => ['EU']
+               },
+    'E1411' => { name     => 'Distarch glycerol (thickening agent)',
+                 purpose  => 'Emulsifier'
+               },
+    'E1412' => { name     => 'Distarch phosphate esterified with sodium trimetasphosphate; esterified with phosphorus oxychloride (stabiliser)',
+                 purpose  => 'Thickening agent',
+                 approved => ['EU']
+               },
+    'E1413' => { name     => 'Phosphated distarch phosphate (stabiliser)',
+                 purpose  => 'Thickening agent',
+                 approved => ['EU']
+               },
+    'E1414' => { name     => 'Acetylated distarch phosphate (emulsifier)',
+                 purpose  => 'Thickening agent',
+                 approved => ['EU']
+               },
+    'E1420' => { name     => 'Starch acetate esterified with acetic anhydride (stabiliser)',
+                 purpose  => 'Thickening agent',
+                 approved => ['EU']
+               },
+    'E1421' => { name     => 'Starch acetate esterified with vinyl acetate (stabiliser)',
+                 purpose  => 'Thickening agent',
+               },
+    'E1422' => { name     => 'Acetylated Distarch Adipate (stabiliser)',
+                 purpose  => 'Thickening agent',
+                 approved => ['EU']
+               },
+    'E1423' => { name     => 'Acetylated distarch glycerol',
+                 purpose  => 'Thickening agent'
+               },
+    'E1430' => { name     => 'Distarch glycerine (stabiliser)',
+                 purpose  => 'Thickening agent'
+               },
+    'E1440' => { name     => 'Hydroxy propyl starch (emulsifier)',
+                 purpose  => 'Thickening agent',
+                 approved => ['EU']
+               },
+    'E1441' => { name     => 'Hydroxy propyl distarch glycerine (stabiliser)',
+                 purpose  => 'Thickening agent'
+               },
+    'E1442' => { name     => 'Hydroxy propyl distarch phosphate (stabiliser)',
+                 purpose  => 'Thickening agent',
+                 approved => ['EU']
+               },
+    'E1443' => { name     => 'Hydroxy propyl distarch glycerol' },
+    'E1450' => { name     => 'Starch sodium octenyl succinate (emulsifier) (stabiliser)',
+                 purpose  => 'Thickening agent',
+                 approved => ['EU']
+               },
+    'E1451' => { name     => 'Acetylated oxidised starch (emulsifier)',
+                 purpose  => 'Thickening agent',
+                 approved => ['EU']
+               },
+    'E1452' => { name     => 'Starch aluminium octenyl succinate',
+                 approved => ['EU']
+               },
+    'E1501' => { name     => 'Benzylated hydrocarbons' },
+    'E1502' => { name     => 'Butane-1, 3-diol'        },
+    'E1503' => { name     => 'Castor oil',
+                 purpose  => 'Resolving agent'
+               },
+    'E1504' => { name     => 'Ethyl acetate',
+                 purpose  => 'Flavour solvent',
+               },
+    'E1505' => { name     => 'Triethyl citrate',
+                 purpose  => 'Foam stabiliser',
+                 approved => ['EU']
+               },
+    'E1510' => { name     => 'Ethanol' },
+    'E1516' => { name     => 'Glyceryl monoacetate',
+                 purpose  => 'Flavour solvent',
+               },
+    'E1517' => { name     => 'Glyceryl diacetate or diacetin',
+                 purpose  => 'Flavour solvent',
+               },
+    'E1518' => { name     => 'Glyceryl triacetate or triacetin',
+                 purpose  => 'Humectant',
+                 approved => ['EU']
+               },
+    'E1519' => { name     => 'Benzyl alcohol' },
+    'E1520' => { name     => 'Propylene glycol',
+                 purpose  => 'Humectant',
+                 approved => ['EU']
+               },
+    'E1521' => { name     => 'Polyethylene glycol 8000',
+                 approved => ['EU']
+               },
+    'E1525' => { name     => 'Hydroxyethyl cellulose',
+                 purpose  => 'Thickening agent'
+               }
+};
+
+Readonly my $HALAL =>
+[
+    'E100',  'E101',  'E101A', 'E102',  'E103',  'E104',  'E105',  'E106',  'E107',
+    'E110',  'E1103', 'E1105', 'E1200', 'E1201', 'E1202', 'E122',  'E123',  'E124',
+    'E127',  'E128',  'E129',  'E131',  'E132',  'E133',  'E140',  'E1400', 'E1401',
+    'E1402', 'E1403', 'E1404', 'E141',  'E1410', 'E1412', 'E1413', 'E1414', 'E142',
+    'E1420', 'E1421', 'E1422', 'E1440', 'E1441', 'E1442', 'E1450', 'E1501', 'E1502',
+    'E1503', 'E1504', 'E1505', 'E150A', 'E150B', 'E150C', 'E150D', 'E151',  'E1517',
+    'E1518', 'E1520', 'E153',  'E154',  'E155',  'E160B', 'E160C', 'E160D', 'E160E',
+    'E160F', 'E161A', 'E161B', 'E161C', 'E161D', 'E161E', 'E161F', 'E161G', 'E162',
+    'E163',  'E170',  'E171',  'E172',  'E173',  'E174',  'E175',  'E180',  'E200',
+    'E201',  'E202',  'E203',  'E210',  'E211',  'E212',  'E213',  'E214',  'E215',
+    'E216',  'E217',  'E218',  'E219',  'E220',  'E221',  'E222',  'E223',  'E224',
+    'E225',  'E226',  'E227',  'E228',  'E230',  'E231',  'E232',  'E233',  'E234',
+    'E235',  'E236',  'E237',  'E238',  'E239',  'E240',  'E242',  'E249',  'E250',
+    'E251',  'E260',  'E261',  'E262',  'E263',  'E264',  'E280',  'E281',  'E282',
+    'E283',  'E284',  'E285',  'E290',  'E296',  'E297',  'E300',  'E301',  'E302',
+    'E303',  'E306',  'E307',  'E308',  'E309',  'E310',  'E311',  'E313',  'E314',
+    'E315',  'E320',  'E321',  'E330',  'E331',  'E332',  'E333',  'E334',  'E335',
+    'E336',  'E337',  'E338',  'E339',  'E340',  'E341',  'E343',  'E350',  'E351',
+    'E352',  'E353',  'E354',  'E355',  'E356',  'E357',  'E363',  'E365',  'E366',
+    'E367',  'E370',  'E375',  'E380',  'E381',  'E385',  'E400',  'E401',  'E402',
+    'E403',  'E404',  'E405',  'E406',  'E407',  'E407A', 'E410',  'E412',  'E413',
+    'E414',  'E415',  'E416',  'E417',  'E418',  'E420',  'E421',  'E422',  'E425',
+    'E440',  'E444',  'E450',  'E451',  'E452',  'E460',  'E461',  'E462',  'E463',
+    'E464',  'E465',  'E466',  'E467',  'E469',  'E476',  'E500',  'E501',  'E503',
+    'E504',  'E507',  'E508',  'E509',  'E510',  'E511',  'E512',  'E513',  'E514',
+    'E515',  'E516',  'E517',  'E518',  'E519',  'E520',  'E521',  'E522',  'E523',
+    'E524',  'E525',  'E526',  'E527',  'E528',  'E529',  'E530',  'E535',  'E536',
+    'E538',  'E541',  'E543',  'E544',  'E545',  'E546',  'E550',  'E551',  'E552',
+    'E553A', 'E553B', 'E554',  'E555',  'E556',  'E558',  'E559',  'E574',  'E575',
+    'E576',  'E577',  'E578',  'E579',  'E585',  'E620',  'E621',  'E622',  'E623',
+    'E624',  'E625',  'E626',  'E627',  'E628',  'E629',  'E900',  'E901',  'E902',
+    'E903',  'E905',  'E907',  'E912',  'E913',  'E915',  'E925',  'E926',  'E927A',
+    'E927B', 'E928',  'E930',  'E938',  'E939',  'E941',  'E942',  'E948',  'E950',
+    'E951',  'E952',  'E953',  'E954',  'E957',  'E959',  'E965',  'E966',  'E967',
+    'E999'
+];
+
+Readonly my $HARAM =>
+[
+    'E120',  'E441',  'E542',  'E904',  'E920',  'E921'
+];
+
+Readonly my $SUSPECTED =>
+[
+    'E111',  'E121',  'E125',  'E126',  'E130',  'E152',  'E160A', 'E252',  'E270',
+    'E304',  'E312',  'E316',  'E318',  'E322',  'E325',  'E326',  'E327',  'E329',
+    'E430',  'E431',  'E432',  'E433',  'E434',  'E435',  'E436',  'E442',  'E445',
+    'E470A', 'E470B', 'E471',  'E472A', 'E472B', 'E472C', 'E472D', 'E472E', 'E472F',
+    'E473',  'E474',  'E475',  'E477',  'E478',  'E479B', 'E481',  'E482',  'E483',
+    'E491',  'E492',  'E493',  'E494',  'E495',  'E570',  'E571',  'E572',  'E910'
+];
+
 =head1 SYNOPSIS
 
 E numbers are number codes for food additives that have been assessed for use within the European Union (the "E" prefix
@@ -1693,7 +1902,7 @@ Readonly my $CLASSIFICATION =>
     },
     { category => 'Thickeners, Stablisers, Emulsifiers',
       data     => $THICKENERS_STABLISERS_EMULSIFIERS,
-         min      => 400, 
+      min      => 400, 
       max      => 499 
     },
     { category => 'PH Regulators, Anti-caking Agents',
@@ -1708,14 +1917,19 @@ Readonly my $CLASSIFICATION =>
     },
     { category => 'Antibiotics',
       data     => $ANTIBIOTICS,
-       min      => 700, 
+      min      => 700, 
       max      => 799 
     },
     { category => 'Miscellaneous',
       data     => $MISCELLANEOUS,
       min      => 900, 
       max      => 999 
-    }
+    },
+    { category => 'Additional Chemicals',
+      data     => $ADDITIONAL_CHEMICALS,
+      min      => 1100,
+      max      => 1599
+    }  
 ];
 
 sub new
@@ -1761,6 +1975,32 @@ sub is_valid
         }
     }
     return 0;
+}
+
+=head2 get_status()
+
+Return status of the given Ecode. Possible values are HALAL, HARAM or SUSPECTED. Returns N/A
+if the code doesn't have status in our record.
+
+    use strict; use warnings;
+    use Food::ECodes;
+    
+    my $food   = Food::ECodes->new();
+    my $status = $food->get_status('E100');
+    print "Status for ECode E101: [$status].\n";
+
+=cut
+
+sub get_status
+{
+	my $self = shift;
+    my $code = shift;
+    
+    $code = uc($code);
+	return 'HALAL'     if grep(/\b$code\b/, @{$HALAL});
+	return 'HARAM'     if grep(/\b$code\b/, @{$HARAM});
+	return 'SUSPECTED' if grep(/\b$code\b/, @{$SUSPECTED});
+	return 'N/A';	
 }
 
 =head2 get_name()
