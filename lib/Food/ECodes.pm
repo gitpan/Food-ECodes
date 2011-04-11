@@ -12,11 +12,11 @@ Food::ECodes - Interface to Food Additive ECodes.
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 Readonly my $COLOURS =>
 {
@@ -1953,9 +1953,9 @@ Return 1/0 depending whether the given Ecode is VALID or INVALID.
     my $food = Food::ECodes->new();
     ($food->is_valid('E100'))
     ?
-    (print "VALID ECode [$code].\n")
+    (print "VALID ECode [E100].\n")
     :
-    (print "INVALID ECode [$code].\n");
+    (print "INVALID ECode [E100].\n");
 
 =cut
 
@@ -1987,20 +1987,20 @@ if the code doesn't have status in our record.
     
     my $food   = Food::ECodes->new();
     my $status = $food->get_status('E100');
-    print "Status for ECode E101: [$status].\n";
+    print "Status for ECode E100: [$status].\n";
 
 =cut
 
 sub get_status
 {
-	my $self = shift;
+    my $self = shift;
     my $code = shift;
     
     $code = uc($code);
-	return 'HALAL'     if grep(/\b$code\b/, @{$HALAL});
-	return 'HARAM'     if grep(/\b$code\b/, @{$HARAM});
-	return 'SUSPECTED' if grep(/\b$code\b/, @{$SUSPECTED});
-	return 'N/A';	
+    return 'HALAL'     if grep(/\b$code\b/, @{$HALAL});
+    return 'HARAM'     if grep(/\b$code\b/, @{$HARAM});
+    return 'SUSPECTED' if grep(/\b$code\b/, @{$SUSPECTED});
+    return 'N/A';    
 }
 
 =head2 get_name()
@@ -2012,7 +2012,7 @@ Return the name of the given Ecode, if exists, otherwise croaks.
     
     my $food = Food::ECodes->new();
     my $name = $food->get_name('E100');
-    print "Name for ECode E101: [$name].\n";
+    print "Name for ECode E100: [$name].\n";
 
 =cut
 
@@ -2044,7 +2044,7 @@ Return the purpose of the given Ecode, if exists.
     
     my $food    = Food::ECodes->new();
     my $purpose = $food->get_purpose('E100');
-    print "Purpose for ECode E101: [$purpose].\n";
+    print "Purpose for ECode E100: [$purpose].\n";
 
 =cut
 
@@ -2077,9 +2077,9 @@ Return 1/0 depending whether the given Ecode is approved in EU.
     my $food = Food::ECodes->new();
     ($food->is_eu_approved('E100'))
     ?
-    (print "EU approved ECode [$code].\n")
+    (print "EU approved ECode [E100].\n")
     :
-    (print "EU unapproved ECode [$code].\n");
+    (print "EU unapproved ECode [E100].\n");
 
 =cut
 
@@ -2114,9 +2114,9 @@ Return 1/0 depending whether the given Ecode is approved in US.
     my $food = Food::ECodes->new();
     ($food->is_us_approved('E100'))
     ?
-    (print "US approved ECode [$code].\n")
+    (print "US approved ECode [E100].\n")
     :
-    (print "US unapproved ECode [$code].\n");
+    (print "US unapproved ECode [E100].\n");
 
 =cut
 

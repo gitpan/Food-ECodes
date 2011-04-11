@@ -1,5 +1,13 @@
 Revision history for Food-ECodes
 
+0.04    Mon Apr 11 13:49:55 2011
+        - Fixed the typo in the pod for method get_status().
+        - Fixed the typo in the pod for method get_name().
+        - Fixed the typo in the pod for method get_purpose().
+        - Fixed the syntax error in the example pod for method is_valid().
+        - Fixed the syntax error in the example pod for method is_eu_approved().
+        - Fixed the syntax error in the example pod for method is_us_approved().
+
 0.03    Mon Apr 11 12:33:18 2011
         - Added remaining ECodes from 1000 upto 1600.
         - Added method get_status().

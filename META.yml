@@ -16,7 +16,7 @@ name: Food-ECodes
 provides:
   Food::ECodes:
     file: lib/Food/ECodes.pm
-    version: 0.03
+    version: 0.04
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.03
+version: 0.04
