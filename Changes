@@ -1,5 +1,9 @@
 Revision history for Food-ECodes
 
+0.05    Thu Apr 21 18:36:23 2011
+        - Renamed title "SYNOPSIS" to "DESCRIPTION".
+        - Minor cosmetics changes.
+
 0.04    Mon Apr 11 13:49:55 2011
         - Fixed the typo in the pod for method get_status().
         - Fixed the typo in the pod for method get_name().

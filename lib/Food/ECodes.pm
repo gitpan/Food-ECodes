@@ -12,11 +12,11 @@ Food::ECodes - Interface to Food Additive ECodes.
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 Readonly my $COLOURS =>
 {
@@ -1869,17 +1869,20 @@ Readonly my $SUSPECTED =>
     'E491',  'E492',  'E493',  'E494',  'E495',  'E570',  'E571',  'E572',  'E910'
 ];
 
-=head1 SYNOPSIS
+=head1 DESCRIPTION
 
-E numbers are number codes for food additives that have been assessed for use within the European Union (the "E" prefix
-stands  for  "Europe").  They  are  commonly  found on food labels throughout the European Union. Safety assessment and 
-approval are the responsibility of the European Food Safety Authority.
+E  numbers  are  number  codes  for  food additives that have been assessed for use within the
+European Union (the "E" prefix stands for "Europe"). They  are  commonly  found on food labels
+throughout  the  European  Union. Safety assessment and approval are the responsibility of the 
+European Food Safety Authority.
 
-The numbering  scheme  follows that of the International Numbering System (INS) as determined by the Codex Alimentarius 
-committee  though  only  a  subset  of the INS additives are approved for use in the European Union. E numbers are also 
-encountered on food labelling in other jurisdictions, including the Cooperation Council for the Arab States of the Gulf, 
-Australia, New Zealand and Israel. The "E" prefix is omitted in Australia and New Zealand. They are increasingly, though 
-rarely, found on North American packaging, especially in Canada on imported European products.
+The  numbering  scheme  follows that of the International Numbering System (INS) as determined
+by the Codex Alimentarius committee  though  only  a  subset of the INS additives are approved
+for  use  in  the  European  Union. E  numbers are also encountered on food labelling in other 
+jurisdictions,  including  the Cooperation Council for the Arab States of the Gulf, Australia, 
+New Zealand  and  Israel.  The  "E"  prefix  is omitted in Australia and New Zealand. They are
+increasingly, though rarely found on North American packaging especially in Canada on imported 
+European products.
 
 =cut
 
@@ -1951,11 +1954,7 @@ Return 1/0 depending whether the given Ecode is VALID or INVALID.
     use Food::ECodes;
     
     my $food = Food::ECodes->new();
-    ($food->is_valid('E100'))
-    ?
-    (print "VALID ECode [E100].\n")
-    :
-    (print "INVALID ECode [E100].\n");
+    print "Valid ECode.\n" if $food->is_valid('E100');
 
 =cut
 
@@ -1979,8 +1978,8 @@ sub is_valid
 
 =head2 get_status()
 
-Return status of the given Ecode. Possible values are HALAL, HARAM or SUSPECTED. Returns N/A
-if the code doesn't have status in our record.
+Return status of the given Ecode. Possible values are HALAL,HARAM or SUSPECTED. Returns N/A if
+the code doesn't have status in our record.
 
     use strict; use warnings;
     use Food::ECodes;
@@ -2075,11 +2074,7 @@ Return 1/0 depending whether the given Ecode is approved in EU.
     use Food::ECodes;
     
     my $food = Food::ECodes->new();
-    ($food->is_eu_approved('E100'))
-    ?
-    (print "EU approved ECode [E100].\n")
-    :
-    (print "EU unapproved ECode [E100].\n");
+    print "EU Approved code.\n" if $food->is_eu_approved('E100');
 
 =cut
 
@@ -2112,11 +2107,7 @@ Return 1/0 depending whether the given Ecode is approved in US.
     use Food::ECodes;
     
     my $food = Food::ECodes->new();
-    ($food->is_us_approved('E100'))
-    ?
-    (print "US approved ECode [E100].\n")
-    :
-    (print "US unapproved ECode [E100].\n");
+    print "US Approved code.\n" if $food->is_us_approved('E100');
 
 =cut
 
@@ -2147,9 +2138,9 @@ Mohammad S Anwar, C<< <mohammad.anwar at yahoo.com> >>
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-food-ecodes at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Food-ECodes>.  
-I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
+Please report any bugs or feature requests to C<bug-food-ecodes at rt.cpan.org> or through the
+web  interface  at  L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Food-ECodes>.  I  will be 
+notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
 =head1 SUPPORT
 
@@ -2183,15 +2174,16 @@ L<http://search.cpan.org/dist/Food-ECodes/>
 
 Copyright 2011 Mohammad S Anwar.
 
-This program is free software; you can redistribute it and/or modify it
-under the terms of either: the GNU General Public License as published
-by the Free Software Foundation; or the Artistic License.
+This  program  is  free software; you can redistribute it and/or modify it under the  terms of
+either:  the  GNU  General Public License as published by the Free Software Foundation; or the 
+Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
 
 =head1 DISCLAIMER
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+This  program  is  distributed  in  the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 =cut
 
