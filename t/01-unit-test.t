@@ -1,7 +1,7 @@
 ﻿#!perl
 
 use strict;use warnings;
-use Test::More tests => 9;
+use Test::More tests => 11;
 
 use Food::ECodes;
 
@@ -24,3 +24,7 @@ is($food->is_us_approved('E100'), 1);
 is($food->is_valid('E106'), 1);
 
 is($food->is_valid('E99'), 0);
+
+is($food->is_vegetarian('E100'), 1);
+
+is($food->is_vegetarian('E120'), 0);

@@ -1,5 +1,9 @@
 Revision history for Food-ECodes
 
+0.06    Tue Apr 26 10:07:00 2011
+        - Added method is_vegetarian() as suggested by Sawyer.
+        - Added test case for method is_vegetarian().
+
 0.05    Thu Apr 21 18:36:23 2011
         - Renamed title "SYNOPSIS" to "DESCRIPTION".
         - Minor cosmetics changes.

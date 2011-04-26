@@ -12,11 +12,11 @@ Food::ECodes - Interface to Food Additive ECodes.
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =cut
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 Readonly my $COLOURS =>
 {
@@ -1869,6 +1869,64 @@ Readonly my $SUSPECTED =>
     'E491',  'E492',  'E493',  'E494',  'E495',  'E570',  'E571',  'E572',  'E910'
 ];
 
+Readonly my $NONVEG =>
+{
+    'E120'  => 'Colour isolated from the insects Coccus cacti',
+    'E322'  => 'Soy beans and for some purposes from chicken eggs.',
+    '430'   => 'Polyoxyethylene(8) stearate. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E431'  => 'Polyoxyethylene (40) stearate. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E432'  => 'Polyoxyethylene-20-sorbitan monolaurate. Lauric acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E433'  => 'Polyoxyethylene-20-sorbitan mono-oleate. Oleic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E434'  => 'Polyoxyethylene-20-sorbitan monopalmitate. Palmitic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E435'  => 'Polyoxyethylene-20-sorbitan monostearate. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E436'  => 'Polyoxyethylene-20-sorbitan tristearate. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E470'  => 'Fatty acid salts. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E471'  => 'Mono- and di-glycerides of fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E472'  => 'Esters of mono- and diglycerides. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E473'  => 'Sugar esters of fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E474'  => 'Combination of sugar and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E475'  => 'Polyglycerol esters of fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E477'  => 'Propyleneglycol esters of fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    '478'   => 'Mixture of glycerol- and propyleneglycol esters of lactic acid and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E479'  => 'Esterified soy oil. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E479B' => 'Esterified soy oil. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E481'  => 'Mixture of lactic acid and stearic acid, a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E482'  => 'Mixture of lactic acid and stearic acid, a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E483'  => 'Mixture of tartaric acid and stearic acid, a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    '484'   => 'Mixture of citric acid and stearic acid, a fatty acid. Fatty acid are normally of plant origin, but animal origin cannot be excluded.',
+    'E491'  => 'Combinations of sorbitol and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E492'  => 'Combinations of sorbitol and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E493'  => 'Combinations of sorbitol and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E494'  => 'Combinations of sorbitol and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E495'  => 'Combinations of sorbitol and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    '542'   => 'From animal bones. Since the BSE crisis mainly from pork, but other animal bones are used.',
+    'E570'  => 'Stearic acid and stearates. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E571'  => 'Stearic acid and stearates. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E572'  => 'Stearic acid and stearates. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E573'  => 'Stearic acid and stearates. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E626'  => 'Mainly from yeast, also from sardines and meat.',
+    'E627'  => 'Mainly from yeast, also from sardines and meat.',
+    'E628'  => 'Mainly from yeast, also from sardines and meat.',
+    'E629'  => 'Mainly from yeast, also from sardines and meat.',
+    'E630'  => 'Mainly from meat and fish, also made with bacteria.',
+    'E631'  => 'Mainly from meat and fish, also made with bacteria.',
+    'E632'  => 'Mainly from meat and fish, also made with bacteria.',
+    'E633'  => 'Mainly from meat and fish, also made with bacteria.',
+    'E634'  => 'Mainly from meat and fish, also made with bacteria.',
+    'E635'  => 'Mainly from meat and fish, also made with bacteria.',
+    '636'   => 'rom malt (barley), sometimes also from heating milk sugar.',
+    '637'   => 'rom malt (barley), sometimes also from heating milk sugar.',
+    'E640'  => 'Mainly from gelatine (see 441 above), also synthetically.',
+    'E901'  => 'Made by bees, but does not contain insects.',
+    'E904'  => 'Natural polymer derived from certain species of lice from India. Insects get trapped in the resin.',
+    '913'   => 'A wax from sheep. It is excreted by the skin of the sheep and extracted from the wool.',
+    '920'   => 'erived from proteins, including animal protein and hair.',
+    '921'   => 'erived from proteins, including animal protein and hair.',
+    'E966'  => 'Made from milk sugar',
+    '1000'  => 'From beef (bile)',
+    'E1105' => 'From chicken eggs'
+};
+
 =head1 DESCRIPTION
 
 E  numbers  are  number  codes  for  food additives that have been assessed for use within the
@@ -1954,7 +2012,7 @@ Return 1/0 depending whether the given Ecode is VALID or INVALID.
     use Food::ECodes;
     
     my $food = Food::ECodes->new();
-    print "Valid ECode.\n" if $food->is_valid('E100');
+    print "E100 is a valid ECode.\n" if $food->is_valid('E100');
 
 =cut
 
@@ -2074,7 +2132,7 @@ Return 1/0 depending whether the given Ecode is approved in EU.
     use Food::ECodes;
     
     my $food = Food::ECodes->new();
-    print "EU Approved code.\n" if $food->is_eu_approved('E100');
+    print "E100 is EU approved code.\n" if $food->is_eu_approved('E100');
 
 =cut
 
@@ -2107,7 +2165,7 @@ Return 1/0 depending whether the given Ecode is approved in US.
     use Food::ECodes;
     
     my $food = Food::ECodes->new();
-    print "US Approved code.\n" if $food->is_us_approved('E100');
+    print "E100 is US approved code.\n" if $food->is_us_approved('E100');
 
 =cut
 
@@ -2130,6 +2188,29 @@ sub is_us_approved
             return 0;
         }
     }
+}
+
+=head2 is_vegetarian()
+
+Return 1/0 depending whether the given Ecode is VEGETARIAN or NOT.
+
+    use strict; use warnings;
+    use Food::ECodes;
+    
+    my $food = Food::ECodes->new();
+    print "E100 is VEGETARIAN.\n" if $food->is_vegetarian('E100');
+    print "E120 is NON-VEGETARIAN.\n" unless $food->is_vegetarian('E120');
+
+=cut
+
+sub is_vegetarian
+{
+    my $self = shift;
+    my $code = shift;
+    
+    $code = uc($code);
+    return 0 if exists($NONVEG->{$code});
+    return 1;
 }
 
 =head1 AUTHOR
