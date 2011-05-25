@@ -12,11 +12,11 @@ Food::ECodes - Interface to Food Additive ECodes.
 
 =head1 VERSION
 
-Version 0.06
+Version 0.07
 
 =cut
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 Readonly my $COLOURS =>
 {
@@ -1873,13 +1873,14 @@ Readonly my $NONVEG =>
 {
     'E120'  => 'Colour isolated from the insects Coccus cacti',
     'E322'  => 'Soy beans and for some purposes from chicken eggs.',
-    '430'   => 'Polyoxyethylene(8) stearate. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E430'  => 'Polyoxyethylene(8) stearate. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E431'  => 'Polyoxyethylene (40) stearate. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E432'  => 'Polyoxyethylene-20-sorbitan monolaurate. Lauric acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E433'  => 'Polyoxyethylene-20-sorbitan mono-oleate. Oleic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E434'  => 'Polyoxyethylene-20-sorbitan monopalmitate. Palmitic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E435'  => 'Polyoxyethylene-20-sorbitan monostearate. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E436'  => 'Polyoxyethylene-20-sorbitan tristearate. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E441'  => 'Gelatine (emulsifier)',
     'E470'  => 'Fatty acid salts. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E471'  => 'Mono- and di-glycerides of fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E472'  => 'Esters of mono- and diglycerides. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
@@ -1887,19 +1888,19 @@ Readonly my $NONVEG =>
     'E474'  => 'Combination of sugar and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E475'  => 'Polyglycerol esters of fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E477'  => 'Propyleneglycol esters of fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
-    '478'   => 'Mixture of glycerol- and propyleneglycol esters of lactic acid and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
+    'E478'  => 'Mixture of glycerol- and propyleneglycol esters of lactic acid and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E479'  => 'Esterified soy oil. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E479B' => 'Esterified soy oil. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E481'  => 'Mixture of lactic acid and stearic acid, a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E482'  => 'Mixture of lactic acid and stearic acid, a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E483'  => 'Mixture of tartaric acid and stearic acid, a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
-    '484'   => 'Mixture of citric acid and stearic acid, a fatty acid. Fatty acid are normally of plant origin, but animal origin cannot be excluded.',
+    'E484'  => 'Mixture of citric acid and stearic acid, a fatty acid. Fatty acid are normally of plant origin, but animal origin cannot be excluded.',
     'E491'  => 'Combinations of sorbitol and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E492'  => 'Combinations of sorbitol and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E493'  => 'Combinations of sorbitol and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E494'  => 'Combinations of sorbitol and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E495'  => 'Combinations of sorbitol and fatty acids. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
-    '542'   => 'From animal bones. Since the BSE crisis mainly from pork, but other animal bones are used.',
+    'E542'  => 'From animal bones. Since the BSE crisis mainly from pork, but other animal bones are used.',
     'E570'  => 'Stearic acid and stearates. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E571'  => 'Stearic acid and stearates. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
     'E572'  => 'Stearic acid and stearates. Stearic acid is a fatty acid. Fatty Acids are normally of plant origin, but animal origin cannot be excluded.',
@@ -1914,16 +1915,16 @@ Readonly my $NONVEG =>
     'E633'  => 'Mainly from meat and fish, also made with bacteria.',
     'E634'  => 'Mainly from meat and fish, also made with bacteria.',
     'E635'  => 'Mainly from meat and fish, also made with bacteria.',
-    '636'   => 'rom malt (barley), sometimes also from heating milk sugar.',
-    '637'   => 'rom malt (barley), sometimes also from heating milk sugar.',
+    'E636'  => 'rom malt (barley), sometimes also from heating milk sugar.',
+    'E637'  => 'rom malt (barley), sometimes also from heating milk sugar.',
     'E640'  => 'Mainly from gelatine (see 441 above), also synthetically.',
     'E901'  => 'Made by bees, but does not contain insects.',
     'E904'  => 'Natural polymer derived from certain species of lice from India. Insects get trapped in the resin.',
-    '913'   => 'A wax from sheep. It is excreted by the skin of the sheep and extracted from the wool.',
-    '920'   => 'erived from proteins, including animal protein and hair.',
-    '921'   => 'erived from proteins, including animal protein and hair.',
+    'E913'  => 'A wax from sheep. It is excreted by the skin of the sheep and extracted from the wool.',
+    'E920'  => 'erived from proteins, including animal protein and hair.',
+    'E921'  => 'erived from proteins, including animal protein and hair.',
     'E966'  => 'Made from milk sugar',
-    '1000'  => 'From beef (bile)',
+    'E1000' => 'From beef (bile)',
     'E1105' => 'From chicken eggs'
 };
 

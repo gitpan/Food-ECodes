@@ -1,5 +1,8 @@
 Revision history for Food-ECodes
 
+0.07    Wed May 25 10:21:00 2011
+        - Added E441 to the list of Non-Veg ECode [https://rt.cpan.org/Ticket/Display.html?id=68455].
+
 0.06    Tue Apr 26 10:07:00 2011
         - Added method is_vegetarian() as suggested by Sawyer.
         - Added test case for method is_vegetarian().
