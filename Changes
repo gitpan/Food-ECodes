@@ -1,5 +1,9 @@
 Revision history for Food-ECodes
 
+0.08    Tue Aug 09 15:44:11 2011
+        - Made Readonly v1.03 as minimum requirement.
+        - Prepared the distribution using the Module::Signature v0.68.
+
 0.07    Wed May 25 10:21:00 2011
         - Added E441 to the list of Non-Veg ECode [https://rt.cpan.org/Ticket/Display.html?id=68455].
 

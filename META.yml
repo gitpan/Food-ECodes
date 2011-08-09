@@ -3,7 +3,7 @@ abstract: 'Interface to Food Additive ECodes.'
 author:
   - 'Mohammad S Anwar <mohammad.anwar@yahoo.com>'
 build_requires:
-  Readonly: 0
+  Readonly: 1.03
   Test::More: 0
 configure_requires:
   Module::Build: 0.36
@@ -16,7 +16,7 @@ name: Food-ECodes
 provides:
   Food::ECodes:
     file: lib/Food/ECodes.pm
-    version: 0.07
+    version: 0.08
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.07
+version: 0.08

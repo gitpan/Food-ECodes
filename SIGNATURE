@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.66.
+signed via the Module::Signature module, version 0.68.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,14 +14,14 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 976e8a033db1fc4dc87d08acb4fba7f7fb91a12c Build.PL
-SHA1 548a7d444afc4108b924a5a4b050c8b42e6d902a Changes
+SHA1 22539775f51493667a02e5fd94988bdc3fe36204 Build.PL
+SHA1 6cd8f30d20b31edcc29ea8c0453b6f8de224225e Changes
 SHA1 2cd9a0d655689a3987f8407ad003dc9ad10968f9 MANIFEST
 SHA1 7d20e4e840781030202bb045d5ab81b3fd1b68b0 MANIFEST.SKIP
-SHA1 e3342c539ac28e3c7a9f4624be1d9588c425dbb6 META.yml
-SHA1 e03ae5a320ca230b8f76bf53209f2a02eba2dbfc Makefile.PL
+SHA1 b28981d809fa5b993e289eadc50eaabfa9cefe8d META.yml
+SHA1 bf03e0077067f434b9223bccd1aa78e0ad3d406b Makefile.PL
 SHA1 f22634c3c100544c905649546c1d5456ee6731b9 README
-SHA1 2de37e4600a32d7d0054ee95b214e4d47f5cbfa5 lib/Food/ECodes.pm
+SHA1 08edaef8c998209b1a365a30ee80ea0a9c9ef442 lib/Food/ECodes.pm
 SHA1 bff2c42ead948c1ac709c9e4b0fddbe13074d4a0 t/00-load.t
 SHA1 00a07a5ac8f89ccfe782668c39bbf65d618975b8 t/01-unit-test.t
 SHA1 2b8ffb7e4f399af95d092743846ac8d438f2c53e t/manifest.t
@@ -29,11 +29,11 @@ SHA1 0765c9ff0cc4319f415bb08d0053b7717a8284a2 t/pod.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2.0.14 (MingW32)
 
-iQEcBAEBAgAGBQJN3NNLAAoJEPYcXBXhRYOhbQgH/19kSV7UL7+zlxWmdLQQrWdF
-40EpMxWCyMfdfRWbe6OfS6cuAGBVlFN4KOasBZAWzwRYlLgd1/Tbi13EzA16W/d8
-zslTKDpibDgeLbm0nXn644kSKqMZYjc6yjBL/srP6wwIPYPULrvQBu0KXieg5uA1
-1FGpfKsAWllJVcIeKfzOpEysmCzA1AgFVHlBPFLFptH4Jqh+l9lKTjz8CmvWG01a
-JP1TtNeSfmCl5t8iDOG2xS2p96ZIkKzVaWXLYtLC072JxHuRc2pVczvzMZ2FlPwP
-K5x+IU+fZoTr2L2oN/qyVa2ArGwcA0MPSdT4PTO5pGdlBId3MTBw2l7BQQmnMA0=
-=tya/
+iQEcBAEBAgAGBQJOQUgYAAoJEPYcXBXhRYOhECsH/3EK4FImmTO2Vipq7hrYYV5o
+G7Mokg3CDPmsF6palNGLCPmHlx/DREiEaOUUy6W4ZTDVfLuv0VASvTN9k0WAbT6k
+lqfY0j3AEnQYsBMQJKt0PN1qKezfmVxY4tscO4/IzLkjItGRJd2zCy+VWQYm6bdp
+5Zi0P0iir1EJVEIQNs698QcaMgNbPTNgFqJ8H167XfLTc7+3UeqglgpkzVLXgBcm
+bm0/yyVghqFjqLEt9s8qIghIvSundHMC00klVbab0VK0tdbpHohwXg9vgGbrE+Qq
+tXTv43aUPLmD7zhNtHHNx1aluIWUMW92P7kQEjPDEite6SjnUgBLlA4F/BDAiPY=
+=R3JK
 -----END PGP SIGNATURE-----
